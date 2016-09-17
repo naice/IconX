@@ -38,16 +38,20 @@
                     <ItemsControl ItemsSource="{Binding IconList.Icons}" Margin="0,5">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Border Width="96" Height="96" BorderBrush="#FF2A416A" BorderThickness="3" CornerRadius="10" Margin="10,5">
-                                    <Grid>
+                                <Grid Margin="10,5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Border Grid.Row="0" Width="96" Height="96" BorderBrush="#FF2A416A" BorderThickness="3" CornerRadius="10">
                                         <Image Source="{Binding Source}" Stretch="UniformToFill" StretchDirection="DownOnly"/>
-                                        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#FF2A416A" FontWeight="Bold" Margin="5">
+                                    </Border>
+                                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" Foreground="#FF2A416A" FontWeight="Bold" Margin="5">
                                         <Run Text="{Binding Width}"/>
                                         <Run Text="x"/>
                                         <Run Text="{Binding Height}"/>
-                                        </TextBlock>
-                                    </Grid>
-                                </Border>
+                                    </TextBlock>
+                                </Grid>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
